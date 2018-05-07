@@ -1,0 +1,226 @@
+/* Peter Mingione - Taneleer Aggregator Demo - CSS Styles */
+
+* {
+	box-sizing: border-box;
+	font-family: Montserrat , sans-serif;
+}
+h1, 
+h2{
+	margin-left:10px;
+	font-weight: 300;
+}
+.outer-wrapper{
+	overflow: hidden;
+}
+.inner-wrapper{
+	display:inline-block;
+	vertical-align:top;
+	padding:5px;
+	position:relative;
+}
+.inner-wrapper .thumbnail-image{
+	width:100%;
+	padding-bottom: 30px;
+}
+.inner-wrapper .outer-caption{
+	color:black;
+	width:100%;
+	padding-top:35%;
+	background-color:#fc7cab;
+	position:relative;
+}
+.inner-wrapper .outer-caption .inner-caption{
+	font-size:14px;
+	font-family: Montserrat , sans-serif;
+	overflow:hidden;
+	width:75%;
+	height:70px;
+	position:absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	margin:auto;
+}
+.inner-wrapper .item-overlay-color{
+	position: absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	margin:auto;
+	background-color: #fff;
+	transition: all .5s;
+	opacity: 0;	
+}
+.inner-wrapper:hover .item-overlay-color {
+  	opacity: 0.75;
+}
+.inner-wrapper .item-overlay-text{
+	border: 2px solid #7e7e7e;
+	color:#7e7e7e;
+	font-size: 10px;
+	position: absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	width:70px;
+	height:35px;
+	line-height:35px;
+	margin:auto;
+	border-radius:1px;
+	text-align: center;
+	transition: all .5s;
+	opacity: 0;
+}
+.inner-wrapper:hover .item-overlay-text {
+  	opacity: 0.75;
+}
+.inner-wrapper .page-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255,255,255,0.60);
+    z-index: 2;
+    opacity:0;
+    transition: all .5s;
+    pointer-events:none;
+}
+.inner-wrapper .page-overlay .box{
+    position: absolute;
+    top: 3%;
+    left: 10%;
+    bottom:3%;
+    right: 10%;
+    font-size: 50px;
+    color: #000;
+    background-color:#efdede;
+    padding:30px;
+    overflow: hidden;
+}
+.inner-wrapper .page-overlay .box .image-wrapper{
+	width:66%;
+	height: 100%;
+	background-color:#efdede;
+	display: inline-flex;
+	vertical-align:top;
+	float:left;
+}
+.inner-wrapper .page-overlay .box .image-wrapper .page-image{
+	height:100%;
+	margin: 0 auto;
+}
+.inner-wrapper .page-overlay .box .text{
+	width:33%;
+	height: 99%;
+	display: inline-block;
+	vertical-align:top;	
+	color:#000;
+	background-color: #fff;
+	padding:10px;
+	float:right;
+}
+.inner-wrapper .page-overlay .box .text > *{
+	padding-bottom: 35px;
+}
+.inner-wrapper .page-overlay .box .text .user{
+	font-size: 23px;
+	line-height: 1.2;
+	color:#000;
+	font-weight:400;
+	margin: 20px 20px 0 ;
+}
+.inner-wrapper .page-overlay .box .text .caption{
+	font-size: 13px;
+	line-height: 1.2;
+	color:#000;
+	font-weight:400;
+	margin: 0 20px;
+}
+.inner-wrapper .page-overlay .box .text .created-date{
+	font-size: 13px;
+	line-height: 1.2;
+	color:#000;
+	font-weight:400;
+	margin: 0 20px;
+}
+.inner-wrapper .page-overlay .box .close{
+    position:absolute;
+    top:0;
+    right:0;
+    color:#7e7e7e;
+    font-weight: 300;
+    font-size: 60px;
+    line-height: 30px;
+    padding-top:3px;
+    cursor: pointer;
+}
+.inner-wrapper .page-overlay .box .prev,
+.inner-wrapper .page-overlay .box .next{
+	position: absolute;
+	z-index: 5;
+	top: 45%;
+	cursor: pointer;
+	font-size:80px;
+	font-weight: 300;
+	color:#7e7e7e;
+}
+.inner-wrapper .page-overlay .box .prev{
+	left:0;
+}
+.inner-wrapper .page-overlay .box .next{
+	right:0;
+}
+@media screen and (min-width: 1301px){
+	.inner-wrapper{
+		width:16.6666%;
+	}
+}
+@media screen and (max-width: 1300px){
+	.inner-wrapper{
+		width:20%;
+	}
+
+}
+@media screen and (max-width: 1024px){
+	.inner-wrapper{
+		width:25%;
+	}
+}
+
+@media screen and (max-width: 768px){
+	.inner-wrapper{
+		width:50%;
+	}
+	.inner-wrapper .page-overlay {
+    	top: 0;
+	    left: 0;
+	    bottom:0;
+	    right: 0;
+    }
+	.inner-wrapper .page-overlay .box{
+	    position: static;
+	}
+	.inner-wrapper .page-overlay .box .image-wrapper{
+		width:100%;
+	}
+	.inner-wrapper .page-overlay .box .image-wrapper .page-image{
+		width:100%;
+	}
+	.inner-wrapper .page-overlay .box .text{
+		margin-top: 20px;
+		width:100% !important;
+		overflow: auto;
+	}
+}
+@media screen and (max-width: 480px){
+	.inner-wrapper{
+		width:100%;
+	}
+}
+	

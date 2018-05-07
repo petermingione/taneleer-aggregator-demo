@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-app="appName" ng-controller="appCtrl" id="appId">
+<head>
+	<title ng-bind="title"></title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body> 
+
+	<h1>{{title}}</h1>
+
+	<div id="outer-wrapper" class="outer-wrapper">
+	  	<div id="inner-wrapper" class="inner-wrapper" ng-repeat="x in insideData">
+			<img class="thumbnail-image" ng-if="x.service=='Instagram'||(x.service=='Twitter' && x.mediaType=='image')" ng-src='{{x.thumbnails[0].url}}'>
+		    <div class="outer-caption" ng-if="x.service=='Twitter'&& x.mediaType!='image'">
+		    	<div class="inner-caption">{{x.caption}}</div>
+		    </div>
+	      	<div class="item-overlay-color" ng-click="showOverlay($index)"></div>
+	      	<div class="item-overlay-text" ng-click="showOverlay($index)">VIEW</div>
+	      	<div class="page-overlay page-overlay{{$index}}">
+					<div class="box">
+						<div class="image-wrapper image-wrapper{{$index}}">
+							<img class="page-image page-image{{$index}}" ng-src='{{x.mainImage.url}}'>
+						</div>
+						<div class="text text{{$index}}">
+							<div class="user user{{$index}}"></div>
+							<div class="caption caption{{$index}}"></div>
+							<div class="created-date created-date{{$index}}"></div>
+						</div>
+						<span class="close" ng-click="hideOverlay($index)">&times;</span>
+						<span class="prev" ng-click="prevOverlay($index)">&lsaquo;</span>
+						<span class="next" ng-click="nextOverlay($index)">&rsaquo;</span>
+					</div>
+			</div>
+	  	</div>
+	</div>
+
+	<script src="scripts/apps.js"></script>
+	<script src="scripts/controllers.js"></script>
+
+</body>
+</html>
